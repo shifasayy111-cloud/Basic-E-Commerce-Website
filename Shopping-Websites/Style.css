@@ -387,6 +387,204 @@ header {
     margin-bottom: 1rem;
 }
 
+/* =========================================
+   VELORA — PRODUCT GRID
+========================================= */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Product Card */
+.product-card {
+    background: #1f2833;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #66fcf1;
+    box-shadow: 0 15px 30px rgba(102, 252, 241, 0.15);
+}
+
+/* Category Badge */
+.product-card .category-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(11, 12, 16, 0.9);
+    color: #66fcf1;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #66fcf1;
+    z-index: 2;
+}
+
+/* Product Image Container */
+.product-img-box {
+    height: 280px;
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Product Image */
+.product-img-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Image Effect */
+.product-card:hover .product-img-box img {
+    transform: scale(1.04);
+}
+
+/* Product Name */
+.product-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Product Price */
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #66fcf1;
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media screen and (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .product-img-box {
+        height: 300px;
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .product-img-box {
+        height: 260px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .product-img-box {
+        height: 280px;
+    }
+}
+
+/* Product Grid - Stable Desktop & Mobile Layout */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.product-card {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Product Image Container */
+.product-img-box {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px;
+}
+
+/* Product Images */
+.product-img-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .product-img-box {
+        height: 280px;
+    }
+}
+
 /* About Section */
 .about-container {
     max-width: 1100px;
@@ -659,4 +857,305 @@ footer {
     border-radius: 4px;
     margin-top: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== VELORA MOBILE RESPONSIVE ONLY ===== */
+
+@media screen and (max-width: 600px) {
+
+    /* Mobile Navbar */
+    header {
+        padding: 12px 16px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .cart-box {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .nav-links {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px 16px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    /* Main Page */
+    .main-content {
+        margin-top: 110px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .page-view {
+        padding: 24px 16px 40px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 28px;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .hero-text {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(30px, 8.5vw, 38px);
+        line-height: 1.12;
+        letter-spacing: 0.5px;
+        margin-bottom: 18px;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .hero-text p {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.65;
+        overflow-wrap: break-word;
+        word-break: normal;
+        margin-bottom: 24px;
+    }
+
+    .hero-text .btn {
+        max-width: 100%;
+        padding: 14px 20px;
+        white-space: normal;
+    }
+
+    /* Hero Image */
+    .hero-image-box {
+        width: 100%;
+        min-width: 0;
+        justify-content: center;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 360px;
+        height: 400px;
+    }
+
+    /* Other Sections */
+    .brand-story {
+        padding: 20px;
+        gap: 24px;
+    }
+
+    .brand-story-text,
+    .brand-story-img {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .brand-story-img {
+        height: 240px;
+    }
+
+    .home-section-title {
+        font-size: 25px;
+        letter-spacing: 1px;
+    }
+
+    .home-section-subtitle {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    /* Prevent horizontal overflow */
+    .hero img,
+    .brand-story img {
+        max-width: 100%;
+    }
+}
+
+/* Extra Small Phones */
+@media screen and (max-width: 360px) {
+
+    header {
+        padding: 10px 12px;
+    }
+
+    .nav-links {
+        gap: 8px 12px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .page-view {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .hero-text h1 {
+        font-size: 29px;
+    }
+}
+
+/* ===== MOBILE COLLECTION FILTER TABS ===== */
+
+@media screen and (max-width: 600px) {
+
+    #shop .filter-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        margin: 0 0 24px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    #shop .filter-tabs .tab-btn {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: 100%;
+        padding: 12px 14px;
+        font-size: 12px;
+        line-height: 1.4;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+    }
+
+    #shop .products-grid {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 360px) {
+
+    #shop .filter-tabs {
+        gap: 8px;
+        padding: 0 8px;
+    }
+
+    #shop .filter-tabs .tab-btn {
+        padding: 10px 8px;
+        font-size: 11px;
+    }
+
+    #shop .products-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Mobile Collection Tabs */
+@media screen and (max-width: 600px) {
+
+    #shop .filter-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    /* All Outfits - first line, full width */
+    #shop .filter-tabs .tab-btn:first-child {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    /* Male and Female - second line */
+    #shop .filter-tabs .tab-btn:nth-child(2),
+    #shop .filter-tabs .tab-btn:nth-child(3) {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 6px;
+        font-size: 12px;
+        white-space: normal;
+        box-sizing: border-box;
+    }
+}
+
+/* Mobile: One Dress Per Row */
+@media screen and (max-width: 600px) {
+    #shop .products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        width: 100%;
+    }
+
+    #shop .products-grid>* {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
+
+/* Mobile Responsive - Brand Story */
+@media screen and (max-width: 600px) {
+    .brand-story {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .brand-story-text {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .brand-story-text p {
+        width: 100%;
+        line-height: 1.7;
+        overflow-wrap: break-word;
+    }
+
+    .brand-story-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .brand-story-img img {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+    }
 }

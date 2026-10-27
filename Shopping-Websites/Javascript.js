@@ -18,7 +18,7 @@ const apparelData = [
     { id: 17, name: "VELORA Pure White Casual Co-Ord Set", gender: "male", price: 1499, img: "https://images.pexels.com/photos/12606659/pexels-photo-12606659.jpeg" },
     { id: 18, name: "VELORA Moonlight White Bodycon Dress", gender: "female", price: 1799, img: "https://images.pexels.com/photos/8085389/pexels-photo-8085389.jpeg" },
     { id: 19, name: "VELORA Rose Grey Elegant Jumpsuit", gender: "female", price: 1899, img: "https://images.pexels.com/photos/32815518/pexels-photo-32815518.jpeg" },
-    { id: 20, name: "VELORA Executive White Formal Shirt", gender: "male", price: 1399, img: "https://images.pexels.com/photos/37906241/pexels-photo-37906241.jpeg" }
+    { id: 20, name: "VELORA Executive White Formal Shirt", gender: "male", price: 1399, img: "https://images.pexels.com/photos/37906241/pexels-photo-37906241.jpeg" }    
 ];
 
 let cartItems = JSON.parse(localStorage.getItem('velora_cart')) || [];
