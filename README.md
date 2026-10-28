@@ -37,14 +37,6 @@ How to Run the Project
 
 You can also use the Live Server extension in VS Code to run the website.
 
-Future Improvements
-
-- Add a shopping cart
-- Implement product search and filtering
-- Add user authentication
-- Integrate a backend and database
-- Add an online payment system
-
 Author
 
 Created by Shifa Sayyed
